@@ -37,9 +37,15 @@ public class AccountsDatabase {
     private void createUser(String line)
     {
         String [] parts = line.split(",");
-        UserMaker user_maker = new UserMaker(Integer.parseInt(parts[0]));
+        UserMaker user_maker = new UserMaker(
+                Integer.parseInt(parts[0]), 
+                Integer.parseInt(parts[1]), 
+                parts[2], 
+                parts[3], 
+                parts[4], 
+                parts[5]
+        );
         
-        user_maker.create(Integer.parseInt(parts[1]), parts[2], parts[3], parts[4], parts[5]);
         users.add(user_maker.getUser());
     }
     

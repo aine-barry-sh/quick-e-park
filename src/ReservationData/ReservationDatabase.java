@@ -37,12 +37,12 @@ public class ReservationDatabase {
     
     private void createReservation(String file_line) {
         String [] parts = file_line.split(",");
-        ReservationMaker  maker = new ReservationMaker(Integer.parseInt(parts[0]));
         boolean toSend = false;
         if (parts[5].equals("true")) {
             toSend = true;
         }
-        maker.create(
+        ReservationMaker  maker = new ReservationMaker(
+                Integer.parseInt(parts[0]),
                 Integer.parseInt(parts[1]), 
                 Integer.parseInt(parts[2]), 
                 parts[3],

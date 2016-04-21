@@ -16,6 +16,14 @@ public class Student implements User {
     private String login;
     private String password;
 
+    
+    public Student(int user_id, String license_plate, String name, String login, String password) {
+        this.user_id = user_id;
+        this.license_plate = license_plate;
+        this.name = name;
+        this.login = login;
+        this.password = password;
+    }
     public int getUserId() {
         return user_id;
     }
@@ -53,21 +61,6 @@ public class Student implements User {
     }
 
     public void setPassword(String password) {
-        this.password = password;
-    }
-    
-    
-    public Student()
-    {
-      
-    }
-    
-    @Override
-    public void create(int user_id, String license_plate, String name, String login, String password) {
-        this.user_id = user_id;
-        this.license_plate = license_plate;
-        this.name = name;
-        this.login = login;
         this.password = password;
     }
     

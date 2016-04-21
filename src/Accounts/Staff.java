@@ -16,6 +16,16 @@ public class Staff implements User {
     private String name;
     private String login;
     private String password;
+    
+    
+    public Staff(int user_id, String license_plate, String name, String login, String password) {
+        this.user_id = user_id;
+        this.license_plate = license_plate;
+        this.name = name;
+        this.login = login;
+        this.password = password;
+    }
+    
 
     public int getUserId() {
         return user_id;
@@ -70,20 +80,6 @@ public class Staff implements User {
                 + this.name + "," + this.login + "," + this.password; 
     }
     
-    public Staff()
-    {
-        
-    }
-    
-    @Override
-    public void create(int user_id, String license_plate, String name, String login, String password)
-    {
-        this.user_id = user_id;
-        this.license_plate = license_plate;
-        this.name = name;
-        this.login = login;
-        this.password = password;
-    }
     
     @Override
     public int getType()

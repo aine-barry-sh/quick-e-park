@@ -13,7 +13,6 @@ public interface User {
     @Override
     String toString();
     boolean validateLogin(String login, String password);
-    void create(int user_id, String license_plate, String name, String login, String password);
     int getType();
     String getLicensePlate();
     int getUserId();

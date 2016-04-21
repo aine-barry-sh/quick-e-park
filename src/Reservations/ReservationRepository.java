@@ -25,8 +25,7 @@ public class ReservationRepository {
     }
     
     public boolean newReservation(int type, int user_id, int car_park_id, String time) {
-        ReservationMaker maker = new ReservationMaker(type);
-        maker.create(user_id, car_park_id, time, reservations.size()+1, false);
+        ReservationMaker maker = new ReservationMaker(type, user_id, car_park_id, time, reservations.size()+1, false);
         if (maker.getReservation() !=null) {
             reservations.add(maker.getReservation());
             return true;

@@ -26,8 +26,7 @@ public class UserRepository {
             int type, String license_plate, 
             String name, String login, String password) {
         
-        UserMaker user_maker = new UserMaker(type);
-        user_maker.create(users.size()+1, license_plate, name, login, password);
+        UserMaker user_maker = new UserMaker(type, users.size()+1, license_plate, name, login, password);
         users.add(user_maker.getUser());
         save();
     

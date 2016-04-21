@@ -12,18 +12,14 @@ package Accounts;
 public class UserMaker {
     private User my_user;
     
-    public UserMaker(int type) {
+    public UserMaker(int type, int user_id, String license_plate, String name, String login, String password) {
         if (type ==0) {
-            my_user = new Student();
+            my_user = new Student(user_id, license_plate, name, login, password);
         } else if (type ==1) {
-            my_user = new Staff();
+            my_user = new Staff(user_id, license_plate, name, login, password);
         }
     }
 
-    public void create(int user_id, String license_plate, String name, String login, String password) {
-        my_user.create(user_id, license_plate, name, login, password);
-    }
-    
     public User getUser()
     {
         return my_user;

@@ -17,6 +17,13 @@ public class CarpoolReservation implements Reservation{
     private int reservation_id;
     
   
+    public CarpoolReservation(int user_id, int car_park_id, String time,int reservation_id, boolean complete) {
+        this.user_id = user_id;
+        this.car_park_id = car_park_id;
+        this.time = time;
+        this.complete = complete;
+        this.reservation_id = reservation_id;
+    }
     
     @Override
     public int getUserId() {
@@ -45,16 +52,7 @@ public class CarpoolReservation implements Reservation{
         return "2," + this.user_id +","+this.car_park_id+","+ this.time + 
                 "," + this.reservation_id + "," + this.complete;
     }
-    
-    @Override
-    public void create(int user_id, int car_park_id, String time,int reservation_id, boolean complete) {
-        this.user_id = user_id;
-        this.car_park_id = car_park_id;
-        this.time = time;
-        this.complete = complete;
-        this.reservation_id = reservation_id;
-    }
-
+   
   
 
     @Override
@@ -62,12 +60,5 @@ public class CarpoolReservation implements Reservation{
         return this.reservation_id;
     }
 
-    @Override
-    public void create(int user_id, int car_park_id, String time, int reservation_id) {
-        this.user_id = user_id;
-        this.car_park_id = car_park_id;
-        this.time = time;
-        this.complete = false;
-        this.reservation_id = reservation_id;
-    }
+    
 }

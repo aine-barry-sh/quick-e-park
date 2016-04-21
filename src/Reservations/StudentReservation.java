@@ -17,6 +17,14 @@ public class StudentReservation implements Reservation{
     private boolean complete;
     private int reservation_id;
     
+    public StudentReservation(int user_id, int car_park_id, String time,int reservation_id, boolean complete) {
+        this.user_id = user_id;
+        this.car_park_id = car_park_id;
+        this.time = time;
+        this.complete = complete;
+        this.reservation_id = reservation_id;
+    }
+    
     @Override
     public int getUserId() {
         return user_id;
@@ -37,15 +45,7 @@ public class StudentReservation implements Reservation{
         this.complete = true;
     }
     
-    @Override
-    public void create(int user_id, int car_park_id, String time, int reservation_id)
-    {
-        this.user_id = user_id;
-        this.car_park_id = car_park_id;
-        this.time = time;
-        this.complete = false;
-        this.reservation_id = reservation_id;
-    }
+   
     
     @Override
     public String toString() {
@@ -54,14 +54,6 @@ public class StudentReservation implements Reservation{
     }
     
     
-    @Override
-    public void create(int user_id, int car_park_id, String time, int reservation_id, boolean complete) {
-        this.user_id = user_id;
-        this.car_park_id = car_park_id;
-        this.time = time;
-        this.complete = complete;
-        this.reservation_id = reservation_id;
-    }
     
     
     @Override 
