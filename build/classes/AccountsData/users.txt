@@ -1,0 +1,4 @@
+0,1,plate,Aine Barry,12128996,password
+0,2,plate2,Alan Meagher,alanM,password
+1,3,plate3,JJ Collins,j.j.collins,password
+0,4,jkl,james,jcd,uiop
