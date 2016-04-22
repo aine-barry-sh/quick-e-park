@@ -5,6 +5,10 @@
  */
 package Core;
 
+import Accounts.UserRepository;
+import Carparks.CarParkRepo;
+import Reservations.ReservationRepository;
+
 /**
  * - take photo of license plate 
  * - return plate to here 
@@ -28,5 +32,32 @@ package Core;
  * if the user arrives at the barrier but does not have a reservation 
  */
 public class CarArrivesAtCarPark {
+    private int currentCarPark;
+    private int currentUser;
+    private CarParkRepo carparkDB;
+    private UserRepository userDB;
+    private ReservationRepository resDB;
     
+   public CarArrivesAtCarPark(CarParkRepo carparkDB, UserRepository userDB, ReservationRepository resDB, int currentCarPark){
+       this.currentCarPark = currentCarPark;
+      // this.currentUser = currentUser;
+       this.carparkDB = carparkDB;
+       this.userDB = userDB;
+       this.resDB = resDB;
+   }
+    
+   public void carArrives(){
+       int userAtBarrier = -1;
+       String plate = carparkDB.readPlateFromBarrier(currentCarPark);
+        userAtBarrier = userDB.getUserWithLicensePlate(plate);
+       if(resDB.getReservationsForUser(userAtBarrier).size() == 0){
+           System.out.println("No reservation found, you will be charged extra for this stay");
+           carparkDB.addUserToCarPark(currentCarPark, userDB.checkType(userAtBarrier));
+       }
+       else if(resDB.getReservationsForUser(userAtBarrier).size() > 0){
+           int numberInCar = carparkDB.getNumberInCar(currentCarPark);
+           System.out.println(numberInCar + " people detected in car");
+           carparkDB.addUserToCarPark(currentCarPark, userDB.checkType(userAtBarrier));
+       }
+   }
 }
