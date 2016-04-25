@@ -9,56 +9,20 @@ package Reservations;
  *
  * @author aineb100
  */
-public class CarpoolReservation implements Reservation{
-    private int user_id;
-    private int car_park_id;
-    private String time;
-    private boolean complete;
-    private int reservation_id;
+public class CarpoolReservation extends ReservationDecorator {
     
-  
-    public CarpoolReservation(int user_id, int car_park_id, String time,int reservation_id, boolean complete) {
-        this.user_id = user_id;
-        this.car_park_id = car_park_id;
-        this.time = time;
-        this.complete = complete;
-        this.reservation_id = reservation_id;
+    public CarpoolReservation(Reservation res) {
+        super(res);
     }
-    
-    @Override
-    public int getUserId() {
-        return user_id;
-    }
-
-    @Override
-    public boolean check(int user_id, int car_park_id, String time) {
-        return (this.user_id == user_id && this.car_park_id == car_park_id && this.time.equals(time));
-    }
-    
-    @Override
-    public boolean check(int reservation_id)
-    {
-        return reservation_id == this.reservation_id;
-    }
-
-    @Override
-    public void complete() {
-        this.complete = true;
-    }
-   
     
     @Override
     public String toString() {
-        return "2," + this.user_id +","+this.car_park_id+","+ this.time + 
-                "," + this.reservation_id + "," + this.complete;
+        return "2,"  + super.res.toString();
     }
    
   
 
-    @Override
-    public int getReservationId() {
-        return this.reservation_id;
-    }
+   
 
     
 }

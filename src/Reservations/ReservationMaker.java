@@ -16,11 +16,11 @@ public class ReservationMaker {
     
     public ReservationMaker(int type, int user_id, int car_park_id, String time,int reservation_id, boolean complete) {
         if (type == 0) {
-            res = new StudentReservation(user_id, car_park_id, time,reservation_id, complete);
+            res = new StudentReservation(new ReservationBase(user_id, car_park_id, time,reservation_id, complete));
         } else if (type==1) {
-            res = new StaffReservation(user_id, car_park_id, time,reservation_id, complete);
+            res = new StaffReservation(new ReservationBase(user_id, car_park_id, time,reservation_id, complete));
         } else if (type==2) {
-            res = new CarpoolReservation(user_id, car_park_id, time,reservation_id, complete);
+            res = new CarpoolReservation(new ReservationBase(user_id, car_park_id, time,reservation_id, complete));
         }
     }
  
