@@ -9,15 +9,12 @@ import java.util.Scanner;
 
 /**
  *
- * @author jconn
+ * @author ZeCaptain
  */
-public class TestClient {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        Client c = new Client("James", "127.0.0.1", 41122);
+public class RunClient {
+    public void RunClient(){
+    
+     Client c = new Client("James", "127.0.0.1", 41122);
         c.openConnection("127.0.0.1");
 
         String username, password, input = "";
