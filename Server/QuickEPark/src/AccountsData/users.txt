@@ -1,0 +1,16 @@
+0,1,plate,Aine Barry,12128996,password
+0,2,plate2,Alan Meagher,alanM,password
+1,3,plate3,JJ Collins,j.j.collins,password
+0,4,plate4,James Connolly,james,pass12
+1,5,08LK14,Michelle,mw,password
+1,6,08LK14,Michelle,mw,password
+1,7,08LK14,Michelle,mw,password
+1,8,08LK14,Michelle,mw,password
+1,9,08LK14,Michelle,mw,password
+1,10,08LK14,Michelle,mw,password
+1,11,08LK14,Michelle,mw,password
+1,12,08LK14,Michelle,mw,password
+1,13,08LK14,Michelle,mw,password
+1,14,08LK14,Michelle,mw,password
+1,15,08LK14,Michelle,mw,password
+1,16,08LK14,Michelle,mw,password
